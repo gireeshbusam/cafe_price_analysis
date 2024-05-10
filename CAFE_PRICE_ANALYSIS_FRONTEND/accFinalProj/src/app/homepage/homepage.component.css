@@ -1,0 +1,60 @@
+body {
+    background-color: #E6E6E6;
+}
+
+.machineImg {
+    height: 350px;
+}
+
+.viewIcon {
+    height: 27px;
+    cursor: pointer;
+    display: block;
+}
+
+.cafeIcon {
+    height: 270px;
+    width: 270px;
+}
+
+/* Modal CSS */
+.modalHeading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: larger;
+    color: #f56105 !important;
+}
+
+.modalCloseIcon {
+    height: 27px;
+    cursor: pointer;
+    margin-top: 7px;
+    margin-right: 8px;
+}
+
+.modalBody {
+    font-family: 'Poppins';
+    font-size: medium;
+    
+}
+
+.modalHeadBackground {
+    background-color: #E6E6E6;
+    height: 45px;
+}
+
+.arrowIcon {
+    height: 38px;
+    cursor: pointer;
+}
+
+.arrowIcon:active {
+    transform: scale(1.1);
+    /* box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24); */
+}
+
+.scrollBar {
+    display: block;
+    height: 350px;
+    overflow-y: auto;
+}

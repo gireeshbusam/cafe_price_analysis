@@ -1,0 +1,127 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+
+.heading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: xxx-large;
+}
+
+.background {
+    background-color: #E6E6E6;
+    padding-top: 1%;
+}
+
+.screenHeight {
+    min-height: 487px;
+    max-height: 487px;
+}
+
+.button {
+    background-color: #c9530e;
+    border: #c9530e;
+    color: #E6E6E6;
+    border-radius: 7px;
+    padding-left: 11px;
+    padding-right: 11px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.button:active {
+    transform: scale(1.1);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+select {
+    display: block;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    /* appearance: none; */
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: 8px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+table {
+    border: 1px solid;
+    border-color: #E6E6E6;
+}
+
+/* td {
+    border: 1px solid;
+    border-color: #E6E6E6;
+} */
+
+.tableHead_layout {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: large;
+    color: #f56105 !important;
+    height: 45px;   
+}
+
+.text_body {
+    font-family: 'Poppins';
+    font-weight: bolder;
+    font-size: larger;
+}
+
+textarea {
+    /* background-color: #E6E6E6; */
+    display: block;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    appearance: none;
+    border: none;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    border-radius: 8px;
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+/* Modal CSS */
+.modalHeading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: larger;
+    color: #f56105 !important;
+}
+
+.modalCloseIcon {
+    height: 27px;
+    cursor: pointer;
+    margin-top: 7px;
+    margin-right: 8px;
+}
+
+.modalBody {
+    font-family: 'Poppins';
+    font-size: medium;
+    
+}
+
+.modalHeadBackground {
+    background-color: #E6E6E6;
+    height: 45px;
+}
+
+.arrowIcon {
+    height: 38px;
+    cursor: pointer;
+}
+
+.arrowIcon:active {
+    transform: scale(1.1);
+    /* box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24); */
+}

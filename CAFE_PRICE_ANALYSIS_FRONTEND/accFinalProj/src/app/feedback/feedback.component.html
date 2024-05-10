@@ -1,0 +1,79 @@
+<div class="container-fluid background screenHeight">
+    <div class="row">
+        <div class="col-7">
+            <div class="text_main px-5">
+                Please fill this Feedback form to help us improve our product!
+            </div>
+
+            <div class="text_body mt-3 mb-3 px-5">
+                On a scale of 1 - 5 how would you rate the Dashboard on our platform?
+            </div>
+
+            <div style="margin-left: 44px;">
+                <div id="dash_1" class="bubbleRating" (click)="toggleDash(1);">
+                    <div class='text-center bubbleText' (click)="rating('D', 1)">1</div>
+                </div>
+    
+                <div id="dash_2" class="bubbleRating" (click)="toggleDash(2);">
+                    <div class='text-center bubbleText' (click)="rating('D', 2)">2</div>
+                </div>
+    
+                <div id="dash_3" class="bubbleRating" (click)="toggleDash(3);">
+                    <div class='text-center bubbleText' (click)="rating('D', 3)">3</div>
+                </div>
+    
+                <div id="dash_4" class="bubbleRating" (click)="toggleDash(4);">
+                    <div class='text-center bubbleText' (click)="rating('D', 4)">4</div>
+                </div>
+    
+                <div id="dash_5" class="bubbleRating" (click)="toggleDash(5);">
+                    <div class='text-center bubbleText' (click)="rating('D', 5)">5</div>
+                </div>
+            </div>
+
+            <div class="text_body mt-3 mb-3 px-5">
+                On a scale of 1 - 5 how would you rate the Price Analysis on our platform?
+            </div>
+
+            <div style="margin-left: 44px;">
+                <div id="analysis_1" class="bubbleRating" (click)="toggleAnalysis(1);">
+                    <div class='text-center bubbleText' (click)="rating('A', 1)">1</div>
+                </div>
+    
+                <div id="analysis_2" class="bubbleRating" (click)="toggleAnalysis(2);">
+                    <div class='text-center bubbleText' (click)="rating('A', 2)">2</div>
+                </div>
+    
+                <div id="analysis_3" class="bubbleRating" (click)="toggleAnalysis(3);">
+                    <div class='text-center bubbleText' (click)="rating('A', 3)">3</div>
+                </div>
+    
+                <div id="analysis_4" class="bubbleRating" (click)="toggleAnalysis(4);">
+                    <div class='text-center bubbleText' (click)="rating('A', 4)">4</div>
+                </div>
+    
+                <div id="analysis_5" class="bubbleRating" (click)="toggleAnalysis(5);">
+                    <div class='text-center bubbleText' (click)="rating('A', 5)">5</div>
+                </div>
+            </div>
+
+            <div class="text_body mt-3 mb-3 px-5">
+                Please provide Comments or Suggestions
+            </div>
+
+            <div class="text_body px-5">
+                <textarea name="" id="" cols="80" rows="5" placeholder='Enter your comments here' style="resize: none;" [(ngModel)]="comments"></textarea>
+            </div>
+
+            <div class="text-start mt-3 px-5">
+                <button class="button" type="button" (click)="clearForm();">Clear Form</button>
+                <button class="button" style="margin-left: 2%;" type="button" (click)="feedback();">Submit</button>
+            </div>
+        </div>
+
+        <div class="col-5 text-center">
+            <img src="../../assets/feedback.png" alt="" class="feedbackImage">
+        </div>
+    </div>
+
+</div>

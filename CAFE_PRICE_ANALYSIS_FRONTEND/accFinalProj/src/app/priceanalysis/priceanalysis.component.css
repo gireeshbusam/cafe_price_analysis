@@ -1,0 +1,47 @@
+.analysisImage {
+    height: 350px;
+}
+
+.deleteIcon {
+    height: 27px;
+    cursor: pointer;
+}
+
+.deleteIcon:hover {
+    transform: scale(1.1);
+}
+
+table {
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+select {
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+select:hover {
+    transform: scale(1.1);
+}
+
+input {
+    display: block;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    /* appearance: none; */
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: 8px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.scrollbar {
+    max-height: 100px;
+    overflow-y: auto;
+}

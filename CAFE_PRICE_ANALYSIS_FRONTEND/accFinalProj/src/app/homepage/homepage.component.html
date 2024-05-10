@@ -1,0 +1,437 @@
+<div class="container-fluid background screenHeight">
+    <div class="heading text-center">
+        EspressoExplora: Unveiling Cafe Analytics
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-4 text-center">
+            <img src="../../assets/cafe_1.png" class="cafeIcon" alt="">
+            <div class="text_body mt-2">Cafe Luna-New York 
+                <img src="../../assets/visible.png" (click)="openModal(template, 1)" title="Click to View" style="display: inline-block;" class="viewIcon" alt="">
+            </div>
+        </div>
+        <div class="col-4 text-center">
+            <img src="../../assets/cafe_2.png" class="cafeIcon" alt="">
+            <div class="text_body mt-2">Royale with Cheese
+                <img src="../../assets/visible.png" (click)="openModal(template, 2)" title="Click to View" style="display: inline-block;" class="viewIcon" alt="">
+            </div>
+        </div>
+        <div class="col-4 text-center">
+            <img src="../../assets/cafe_3.png" class="cafeIcon" alt="">
+            <div class="text_body mt-2">NEW YORK BURGER CO.
+                <img src="../../assets/visible.png" (click)="openModal(template, 3)" title="Click to View" style="display: inline-block;" class="viewIcon" alt="">
+            </div>
+        </div>
+    </div>
+
+    <ng-template #template>
+        <div class="modal-header modalHeadBackground">
+          <h4 *ngIf="cafeId == 1" class="modalHeading mt-2">Cafe Luna-New York</h4>
+          <h4 *ngIf="cafeId == 2" class="modalHeading mt-2">Royale with Cheese</h4>
+          <h4 *ngIf="cafeId == 3" class="modalHeading mt-2">NEW YORK BURGER CO.</h4>
+          <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body modalBody">
+            <!-- Cafe Luna Modal Start -->
+            <!-- <div *ngIf="cafeType == 'CL'">
+                <select name="itemType" id="itemType" (change)="itemTypeSelect()">
+                    <option *ngFor="let item of itemOptions;" value="{{item.id}}">{{item.value}}</option>
+                </select>
+            
+                <div *ngIf="selectedItemType == 'B'">
+                    <table class="table mt-2">
+                        <thead class="tableHead_layout">
+                            <tr>
+                                <th class="col-1 tableHead_layout text-center">Select</th>
+                                <th class="col-3 tableHead_layout text-center">Item Name</th>
+                                <th class="col-6 tableHead_layout text-center">Item Description</th>
+                                <th class="col-2 tableHead_layout text-center">Item Price</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let mi of menuItemsCL; let i = index;" class="tableBody_layout">
+                            <tr *ngFor="let mib of mi.burgers">
+                                <td class="col-1 text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="col-3 text-center">
+                                    {{mib.title}}
+                                </td>
+                                <td class="col-6 text-center">
+                                    Juicy Fruit
+                                </td>
+                                <td class="col-2 text-center">
+                                    {{mib.price}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            
+                <div *ngIf="selectedItemType == 'S'">
+                    <table class="table mt-2">
+                        <thead class="tableHead_layout">
+                            <tr>
+                                <th class="col-1 tableHead_layout text-center">Select</th>
+                                <th class="col-3 tableHead_layout text-center">Item Name</th>
+                                <th class="col-6 tableHead_layout text-center">Item Description</th>
+                                <th class="col-2 tableHead_layout text-center">Item Price</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let mi of menuItemsCL; let i = index;" class="tableBody_layout">
+                            <tr *ngFor="let mis of mi.salads">
+                                <td class="col-1 text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="col-3 text-center">
+                                    {{mis.title}}
+                                </td>
+                                <td class="col-6 text-center">
+                                    Juicy Fruit
+                                </td>
+                                <td class="col-2 text-center">
+                                    {{mis.price}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            
+                <div *ngIf="selectedItemType == 'SS'">
+                    <table class="table mt-2">
+                        <thead class="tableHead_layout">
+                            <tr>
+                                <th class="col-1 tableHead_layout text-center">Select</th>
+                                <th class="col-3 tableHead_layout text-center">Item Name</th>
+                                <th class="col-6 tableHead_layout text-center">Item Description</th>
+                                <th class="col-2 tableHead_layout text-center">Item Price</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let mi of menuItemsCL; let i = index;" class="tableBody_layout">
+                            <tr *ngFor="let miss of mi.sandwiches">
+                                <td class="col-1 text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="col-3 text-center">
+                                    {{miss.title}}
+                                </td>
+                                <td class="col-6 text-center">
+                                    Juicy Fruit
+                                </td>
+                                <td class="col-2 text-center">
+                                    {{miss.price}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> -->
+            <!-- Cafe Luna End -->
+
+            <!-- Royal With Cheese Start -->
+            <!-- <div *ngIf="cafeType == 'RWC'">
+                <select name="itemType" id="itemType" (change)="itemTypeSelect()">
+                    <option *ngFor="let item of itemOptions;" value="{{item.id}}">{{item.value}}</option>
+                </select>
+            
+                <div *ngIf="selectedItemType == 'B'">
+                    <table class="table mt-2">
+                        <thead class="tableHead_layout">
+                            <tr>
+                                <th class="col-1 tableHead_layout text-center">Select</th>
+                                <th class="col-3 tableHead_layout text-center">Item Name</th>
+                                <th class="col-6 tableHead_layout text-center">Item Description</th>
+                                <th class="col-2 tableHead_layout text-center">Item Price</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let mi of menuItemsRWC; let i = index;" class="tableBody_layout">
+                            <tr *ngFor="let mib of mi.burgers">
+                                <td class="col-1 text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="col-3 text-center">
+                                    {{mib.title}}
+                                </td>
+                                <td class="col-6 text-center">
+                                    Juicy Fruit
+                                </td>
+                                <td class="col-2 text-center">
+                                    {{mib.price}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            
+                <div *ngIf="selectedItemType == 'S'">
+                    <table class="table mt-2">
+                        <thead class="tableHead_layout">
+                            <tr>
+                                <th class="col-1 tableHead_layout text-center">Select</th>
+                                <th class="col-3 tableHead_layout text-center">Item Name</th>
+                                <th class="col-6 tableHead_layout text-center">Item Description</th>
+                                <th class="col-2 tableHead_layout text-center">Item Price</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let mi of menuItemsRWC; let i = index;" class="tableBody_layout">
+                            <tr *ngFor="let mis of mi.salads">
+                                <td class="col-1 text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="col-3 text-center">
+                                    {{mis.title}}
+                                </td>
+                                <td class="col-6 text-center">
+                                    Juicy Fruit
+                                </td>
+                                <td class="col-2 text-center">
+                                    {{mis.price}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            
+                <div *ngIf="selectedItemType == 'SS'">
+                    <table class="table mt-2">
+                        <thead class="tableHead_layout">
+                            <tr>
+                                <th class="col-1 tableHead_layout text-center">Select</th>
+                                <th class="col-3 tableHead_layout text-center">Item Name</th>
+                                <th class="col-6 tableHead_layout text-center">Item Description</th>
+                                <th class="col-2 tableHead_layout text-center">Item Price</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let mi of menuItemsRWC; let i = index;" class="tableBody_layout">
+                            <tr *ngFor="let miss of mi.sandwiches">
+                                <td class="col-1 text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="col-3 text-center">
+                                    {{miss.title}}
+                                </td>
+                                <td class="col-6 text-center">
+                                    Juicy Fruit
+                                </td>
+                                <td class="col-2 text-center">
+                                    {{miss.price}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> -->
+            <!-- Royal With Cheese End -->
+
+            <!-- New York Burger Co. Start -->
+            <!-- <div *ngIf="cafeType == 'NYB'">
+                <select name="itemType" id="itemType" (change)="itemTypeSelect()">
+                    <option *ngFor="let item of itemOptions;" value="{{item.id}}">{{item.value}}</option>
+                </select>
+            
+                <div *ngIf="selectedItemType == 'B'">
+                    <table class="table mt-2">
+                        <thead class="tableHead_layout">
+                            <tr>
+                                <th class="col-1 tableHead_layout text-center">Select</th>
+                                <th class="col-3 tableHead_layout text-center">Item Name</th>
+                                <th class="col-6 tableHead_layout text-center">Item Description</th>
+                                <th class="col-2 tableHead_layout text-center">Item Price</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let mi of menuItemsNYB; let i = index;" class="tableBody_layout">
+                            <tr *ngFor="let mib of mi.burgers">
+                                <td class="col-1 text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="col-3 text-center">
+                                    {{mib.title}}
+                                </td>
+                                <td class="col-6 text-center">
+                                    Juicy Fruit
+                                </td>
+                                <td class="col-2 text-center">
+                                    {{mib.price}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            
+                <div *ngIf="selectedItemType == 'S'">
+                    <table class="table mt-2">
+                        <thead class="tableHead_layout">
+                            <tr>
+                                <th class="col-1 tableHead_layout text-center">Select</th>
+                                <th class="col-3 tableHead_layout text-center">Item Name</th>
+                                <th class="col-6 tableHead_layout text-center">Item Description</th>
+                                <th class="col-2 tableHead_layout text-center">Item Price</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let mi of menuItemsNYB; let i = index;" class="tableBody_layout">
+                            <tr *ngFor="let mis of mi.salads">
+                                <td class="col-1 text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="col-3 text-center">
+                                    {{mis.title}}
+                                </td>
+                                <td class="col-6 text-center">
+                                    Juicy Fruit
+                                </td>
+                                <td class="col-2 text-center">
+                                    {{mis.price}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            
+                <div *ngIf="selectedItemType == 'SS'">
+                    <table class="table mt-2">
+                        <thead class="tableHead_layout">
+                            <tr>
+                                <th class="col-1 tableHead_layout text-center">Select</th>
+                                <th class="col-3 tableHead_layout text-center">Item Name</th>
+                                <th class="col-6 tableHead_layout text-center">Item Description</th>
+                                <th class="col-2 tableHead_layout text-center">Item Price</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let mi of menuItemsNYB; let i = index;" class="tableBody_layout">
+                            <tr *ngFor="let miss of mi.sandwiches">
+                                <td class="col-1 text-center">
+                                    <input type="checkbox">
+                                </td>
+                                <td class="col-3 text-center">
+                                    {{miss.title}}
+                                </td>
+                                <td class="col-6 text-center">
+                                    Juicy Fruit
+                                </td>
+                                <td class="col-2 text-center">
+                                    {{miss.price}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> -->
+            <!-- New York Burger Co. End -->
+
+            <select name="itemType" id="itemType" (change)="itemTypeSelect()">
+                <option *ngFor="let cat of categoryMst;" value="{{cat.catId}}">{{cat.catName}}</option>
+            </select>
+        
+            <table class="table mt-2 scrollBar">
+                <thead class="tableHead_layout">
+                    <tr>
+                        <th class="col-1 tableHead_layout text-center">Select</th>
+                        <th class="col-3 tableHead_layout text-center">Item Name</th>
+                        <!-- <th class="col-6 tableHead_layout text-center">Item Description</th> -->
+                        <th class="col-2 tableHead_layout text-center">Item Price</th>
+                    </tr>
+                </thead>
+                <tbody *ngIf="cafeId == 1" class="tableBody_layout">
+                    <tr *ngFor="let mi of menuItemsCL; let i = index;">
+                        <td class="col-1 text-center">
+                            <input type="checkbox" [(ngModel)]="mi.checked">
+                        </td>
+                        <td class="col-3 text-center">
+                            {{mi.itemName}}
+                        </td>
+                        <!-- <td class="col-6 text-center">
+                            {{mi.itemDescription}}
+                        </td> -->
+                        <td class="col-2 text-center">
+                            {{mi.itemPrice}}
+                        </td>
+                    </tr>
+                </tbody>
+
+                <tbody *ngIf="cafeId == 2" class="tableBody_layout">
+                    <tr *ngFor="let mi of menuItemsRWC; let i = index;">
+                        <td class="col-1 text-center">
+                            <input type="checkbox" [(ngModel)]="mi.checked">
+                        </td>
+                        <td class="col-3 text-center">
+                            {{mi.itemName}}
+                        </td>
+                        <!-- <td class="col-6 text-center">
+                            {{mi.itemDescription}}
+                        </td> -->
+                        <td class="col-2 text-center">
+                            {{mi.itemPrice}}
+                        </td>
+                    </tr>
+                </tbody>
+
+                <tbody *ngIf="cafeId == 3" class="tableBody_layout">
+                    <tr *ngFor="let mi of menuItemsNYB; let i = index;">
+                        <td class="col-1 text-center">
+                            <input type="checkbox" [(ngModel)]="mi.checked">
+                        </td>
+                        <td class="col-3 text-center">
+                            {{mi.itemName}}
+                        </td>
+                        <!-- <td class="col-6 text-center">
+                            {{mi.itemDescription}}
+                        </td> -->
+                        <td class="col-2 text-center">
+                            {{mi.itemPrice}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div *ngIf="cafeId == 1" class="row" style="white-space: nowrap;">
+                <!-- <div class="col-2 text-start" style="display: inline-block;">
+                    <img src="../../assets/arrow_left.png" title="Click to View Previous Cafe" style="display: inline-block;" class="arrowIcon" alt="">
+                </div> -->
+                <div class="col-2"></div>
+                
+                <div class="col-8 text-center" style="display: inline-block;">
+                    <button class="button" (click)="closeModal();" type="button">Close</button>
+                    <button class="button" (click)="select();" style="margin-left: 2%;" type="button">Select</button>
+                </div>
+
+                <div class="col-2 text-end" style="display: inline-block;">
+                    <img src="../../assets/arrow_right.png" (click)="nextCafe(2)" title="Click to View Next Cafe" style="display: inline-block;" class="arrowIcon" alt="">
+                </div>      
+            </div>
+
+            <div *ngIf="cafeId == 2" class="text-center" style="white-space: nowrap;">
+                <div class="col-2 text-start" style="display: inline-block;">
+                    <img src="../../assets/arrow_left.png" (click)="previousCafe(1)" title="Click to View Previous Cafe" style="display: inline-block;" class="arrowIcon" alt="">
+                </div>
+                
+                <div class="col-8 text-center" style="display: inline-block;">
+                    <button class="button" (click)="closeModal();" type="button">Close</button>
+                    <button class="button" style="margin-left: 2%;" type="button" (click)="select();">Select</button>
+                </div>
+
+                <div class="col-2 text-end" style="display: inline-block;">
+                    <img src="../../assets/arrow_right.png" (click)="nextCafe(3)" title="Click to View Next Cafe" style="display: inline-block;" class="arrowIcon" alt="">
+                </div>
+            </div>
+
+            <div *ngIf="cafeId == 3" class="row" style="white-space: nowrap;">
+                <div class="col-2 text-start" style="display: inline-block;">
+                    <img src="../../assets/arrow_left.png" (click)="previousCafe(2)" title="Click to View Previous Cafe" style="display: inline-block;" class="arrowIcon" alt="">
+                </div>
+                
+                <div class="col-8 text-center" style="display: inline-block;">
+                    <button class="button" (click)="closeModal();" type="button">Close</button>
+                    <button class="button" style="margin-left: 2%;" type="button" (click)="select();">Select</button>
+                </div>
+
+                <div class="col-2"></div>
+                <!-- <div class="col-2 text-end" style="display: inline-block;">
+                    <img src="../../assets/arrow_right.png" (click)="nextCafe('RWC')" title="Click to View Next Cafe" style="display: inline-block;" class="arrowIcon" alt="">
+                </div>       -->
+            </div>
+
+        </div>
+      </ng-template>
+
+</div>

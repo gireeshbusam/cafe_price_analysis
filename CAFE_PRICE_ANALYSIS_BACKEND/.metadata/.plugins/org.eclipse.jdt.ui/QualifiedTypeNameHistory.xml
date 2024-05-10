@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.jdbc.core.RowMapper"/>
+    <fullyQualifiedTypeName name="com.finalproject.cafePriceAnalysis.dao.cafePriceAnalysisDao"/>
+    <fullyQualifiedTypeName name="com.finalproject.cafePriceAnalysis.rowmapper.cafeMenuDTORowMapper"/>
+    <fullyQualifiedTypeName name="com.finalproject.cafePriceAnalysis.rowmapper.categoryDTORowMapper"/>
+    <fullyQualifiedTypeName name="com.finalproject.cafePriceAnalysis.rowmapper.cafeDTORowMapper"/>
+    <fullyQualifiedTypeName name="com.finalproject.cafePriceAnalysis.dto.cafeDTO"/>
+    <fullyQualifiedTypeName name="com.finalproject.cafePriceAnalysis.dto.cafeMenuDTO"/>
+    <fullyQualifiedTypeName name="com.finalproject.cafePriceAnalysis.dto.categoryDTO"/>
+    <fullyQualifiedTypeName name="com.finalproject.cafePriceAnalysis.dto.invertedIndexDTO"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+    <fullyQualifiedTypeName name="com.finalproject.cafePriceAnalysis.dto.counterDTO"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="org.springframework.security.crypto.password.PasswordEncoder"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.Map.Entry"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
+    <fullyQualifiedTypeName name="com.finalproject.cafePriceAnalysis.common.Validation"/>
+</qualifiedTypeNameHistroy>

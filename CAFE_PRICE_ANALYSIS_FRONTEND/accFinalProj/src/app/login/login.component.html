@@ -1,0 +1,56 @@
+<div class="container-fluid background loginScreenHeight">
+
+    <div class="row" *ngIf="!forgotFlag" style="margin-top: 8%;">
+        <div class="col-3 text-end">
+            <img src="../../assets/cafe_logo.png" class="espressoIcon" alt="">
+        </div>
+        <div class="col-6 espressoHeading" style="margin-top: 8%;">
+            EspressoExplora: Unveiling Cafe Analytics
+        </div>
+        <div class="col-3">
+            <div>
+                Username: <input type="text" [(ngModel)]="empId">
+            </div>
+            <div class="mt-4">
+                Password: &nbsp;<input [type]="passwordFlag" [(ngModel)]="password">
+                <!-- <img src="../../assets/visible.png" title="Click to View" style="display: inline-block;" class="viewIcon" alt=""> -->
+            </div>
+            <div class="mt-5 text-center">
+                <button class="button" type="button" (click)="register();">Register</button>
+                <button class="button" style="margin-left: 2%;" (click)="login();" type="button">Login</button>
+                <button class="button" style="margin-left: 2%;" type="button" (click)="forgotPassword();">Forgot Password</button>
+                <!-- <button (click)="showHide();">Testing</button> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="forgotFlag" style="margin-top: 8%;">
+        <div class="col-3 text-end">
+            <img src="../../assets/cafe_logo.png" class="espressoIcon" alt="">
+        </div>
+        <div class="col-6 espressoHeading" style="margin-top: 8%;">
+            EspressoExplora: Unveiling Cafe Analytics
+        </div>
+        <div class="col-3">
+            <div>
+                Username: <input type="text" [(ngModel)]="empId">
+            </div>
+            <div class="mt-4">
+                Password: &nbsp;<input [type]="passwordFlag" [(ngModel)]="password">
+            </div>
+            <div class="mt-4">
+                Re-Enter Password: &nbsp;<input [type]="passwordFlag" [(ngModel)]="rePassword">
+                <!-- <img src="../../assets/visible.png" title="Click to View" style="display: inline-block;" class="viewIcon" alt=""> -->
+            </div>
+            <div class="mt-5 text-center">
+                <button class="button" type="button" (click)="backToLogin();">Back</button>
+                <button class="button" style="margin-left: 2%;" type="button" (click)="resetPassword();">Reset Password</button>
+                <!-- <button (click)="showHide();">Testing</button> -->
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+</div>

@@ -1,0 +1,61 @@
+.text_main {
+    font-family: 'Poppins';
+    font-size: larger;
+    font-weight: bold;
+}
+
+.text_body {
+    font-family: 'Poppins';
+    font-size: medium;
+}
+
+.bubbleRating {
+    height: 42px;
+    width: 42px;
+    background-color: #111111;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 33px;
+    cursor: pointer;
+}
+
+.bubbleRating:hover {
+    transform: scale(1.1);
+}
+
+.bubbleRating.active {
+    height: 42px;
+    width: 42px;
+    background-color: #d52008;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 33px;
+    cursor: pointer;
+}
+
+.bubbleText {
+    color: white;
+    padding-top: 7px;
+    cursor: 'pointer';
+}
+
+.submit {
+    background-color: #111111;
+    border-radius: 8px;
+    color: #FFFFFF;
+    margin-left: 25%;
+    margin-top: 3%;
+}
+
+.cancel {
+    background-color: #111111;
+    border-radius: 8px;
+    color: #FFFFFF;
+    margin-left: 2%;
+    margin-top: 3%;
+}
+
+.feedbackImage {
+    height: 398px;
+    margin-top: 8%;
+}

@@ -1,0 +1,39 @@
+.footer {
+    background-color: #111111;
+    height: 160px;
+}
+
+.footerTextHead {
+    font-family: 'Poppins';
+    font-size: medium;
+    color: #878a85;
+}
+
+.footerText {
+    font-family: 'Poppins';
+    font-size: medium;
+    color: #e6e6e6;
+}
+
+.bubble {
+    height: 42px;
+    width: 42px;
+    background-color: #e6e6e6;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.socialMediaIcon {
+    height: 27px;
+    margin-top: 7px;
+    margin-left: 1px;
+    cursor: pointer;
+}
+
+.facebook {
+    background: url('../../assets/facebook-app-symbol.png');
+    height: 27px;
+    margin-right: 11px;
+    cursor: pointer;
+    display: block;
+}

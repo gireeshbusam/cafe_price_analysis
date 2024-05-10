@@ -1,0 +1,155 @@
+<div class="container-fluid background screenHeight">
+    <div class="heading text-center">
+        Price Analysis
+    </div>
+
+    <div class="row">
+        <div class="col-8">
+            <div style="white-space: nowrap;">
+                <select name="itemType" style="display: inline-block;" id="itemType" (change)="itemTypeSelect();">
+                    <option *ngFor="let cat of categoryMst;" value="{{cat.catId}}">{{cat.catName}}</option>
+                </select>
+    
+                <span class="px-3" style="display: inline-block;">
+                    <button class="button" (click)="openModal(template);" style="margin-left: 2%;" type="button">Search for more Items</button>
+                </span>
+
+                <span style="display: inline-block;">
+                    <button class="button" style="margin-left: 2%;" type="button" (click)="openPriceAnalysis(priceAnalysisPopup);">Price Analysis</button>
+                </span>
+            </div>
+
+            <div>
+                <table class="table mt-2">
+                    <thead class="tableHead_layout">
+                        <tr>
+                            <th class="col-4 tableHead_layout text-center">Item Name</th>
+                            <th class="col-5 tableHead_layout text-center">Cafe Name</th>
+                            <th class="col-2 tableHead_layout text-center">Item Price</th>
+                            <th class="col-1 tableHead_layout text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tableBody_layout scrollbar">
+                        <tr *ngFor="let sil of selectedItemsList | paginate: {itemsPerPage: 5, currentPage: page};">
+                            <td class="col-3 text-center">
+                                {{sil.item_name}}
+                            </td>
+                            <td class="col-5 text-center">
+                                <span *ngIf="sil.cafe_id == 1">Cafe Luna-New York</span>
+                                <span *ngIf="sil.cafe_id == 2">Royale with Cheese</span>
+                                <span *ngIf="sil.cafe_id == 3">NEW YORK BURGER CO.</span>
+                            </td>
+                            <td class="col-2 text-center">
+                                {{sil.item_price}}
+                            </td>
+                            <td class="col-1 text-center">
+                                <img src="../../assets/delete.png" (click)="deleteSelectedItems(sil);" title="Click to Delete Item" alt="" class="deleteIcon">
+                            </td>
+                        </tr>                       
+                    </tbody>
+                </table>
+                <div style="float: right;">
+                    <pagination-controls (pageChange)="handlePageChange($event)"></pagination-controls>
+                </div>
+            </div>
+
+            <div class="text-start mt-5">
+                <!-- <button class="button" type="button">Back to Dashboard</button>
+                <button class="button" style="margin-left: 2%;" type="button">Add more Items</button> -->
+                
+            </div>
+        </div>
+
+        <div class="col-4 text-center">
+            <img src="../../assets/price_analysis.png" class="analysisImage" alt="">
+        </div>
+    </div>
+
+    <ng-template #template>
+        <div class="modal-header modalHeadBackground">
+            <h4 class="modalHeading mt-2">Search for more Items</h4>
+            <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+                <span aria-hidden="true" class="visually-hidden">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body modalBody">
+            <input type="text" style="display: inline-block;" [(ngModel)]="searchKey">
+            <button class="button" type="button" style="margin-left: 10px; display: inline-block;" (click)="getInvertedIndex();">Search</button>
+
+            <table class="table mt-2">
+                <thead class="tableHead_layout">
+                    <tr>
+                        <th class="col-4 tableHead_layout text-center">Item Name</th>
+                        <!-- <th class="col-5 tableHead_layout text-center">Item Description</th> -->
+                        <th class="col-4 tableHead_layout text-center">Cafe Name</th>
+                        <th class="col-4 tableHead_layout text-center">Action</th>
+                        <!-- <th class="col-1 tableHead_layout text-center">Action</th> -->
+                    </tr>
+                </thead>
+                <tbody class="tableBody_layout">
+                    <tr *ngFor="let cafe of cafeNameList">
+                        <td class="col-4 text-center">
+                            {{cafe.itemName}}
+                        </td>
+                        <!-- <td class="col-5 text-center">
+                            Juicy Fruit
+                        </td> -->
+                        <td class="col-4 text-center">
+                            {{cafe.cafe}}
+                        </td>
+                        <td class="col-4 text-center">
+                            <button class="button" type="button" (click)="selectMoreItems(cafe);">Add Item</button>
+                        </td>
+                        <!-- <td class="col-1 text-center">
+                            <img src="../../assets/delete.png" title="Click to Delete Item" alt="" class="deleteIcon">
+                        </td>                         -->
+                    </tr>                    
+                </tbody>
+            </table>
+
+            
+        </div>
+    </ng-template>
+
+    <ng-template #priceAnalysisPopup>
+        <div class="modal-header modalHeadBackground">
+            <h4 class="modalHeading mt-2">Price Analysis</h4>
+            <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+                <span aria-hidden="true" class="visually-hidden">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body modalBody">
+            <button class="button" type="button" style="margin-left: 10px; display: inline-block;" (click)="priceAnalysis();">Price Analysis</button>
+
+            <table class="table mt-2">
+                <thead class="tableHead_layout">
+                    <tr>
+                        <th class="col-4 tableHead_layout text-center">Item Name</th>
+                        <!-- <th class="col-4 tableHead_layout text-center">Item Description</th> -->
+                        <th class="col-6 tableHead_layout text-center">Cafe Name</th>
+                        <th class="col-2 tableHead_layout text-center">Item Price</th>
+                    </tr>
+                </thead>
+                <tbody class="tableBody_layout">
+                    <tr *ngFor="let cafe of priceAnalysisList">
+                        <td class="col-4 text-center">
+                            {{cafe.item_name}}
+                        </td>
+                        <!-- <td class="col-4 text-center">
+                            {{cafe.item_description}}
+                        </td> -->
+                        <td class="col-6 text-center">
+                            <span *ngIf="cafe.cafe_id == 1">Cafe Luna-New York</span>
+                            <span *ngIf="cafe.cafe_id == 2">Royale with Cheese</span>
+                            <span *ngIf="cafe.cafe_id == 3">NEW YORK BURGER CO.</span>
+                        </td>
+                        <td class="col-2 text-center">
+                            {{cafe.item_price}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </ng-template>
+
+</div>
